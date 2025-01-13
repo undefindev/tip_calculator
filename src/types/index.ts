@@ -4,3 +4,9 @@ export type MenuItem = {
   name: string,
   price: number
 }
+
+// el type del carrito u orden, como quieras llamarle
+export type OrderItem = MenuItem & {
+  quantity: number
+}
+// tomamos todo lo de MenuItem y le agregamos la propiedad que faltaba, asi no rescribimos el codigo y son types distintos
