@@ -4,9 +4,15 @@ import { OrderItem } from "../types"
 
 export default function useOrder() {
 
-  const [order, setOrder] = useState<OrderItem[]>([]) // aplicamos un 'generic' para que no la haga de pedo typeScript
-  return {
+  // este es el estado del carrito
+  const [order, setOrder] = useState<OrderItem[]>([])
 
+  // y esta la funcion para agregar los articulos al resumen
+  const addItem = () => {
+    console.log('agregando..')
+  }
+  return {
+    addItem
   }
 }
 

@@ -1,13 +1,18 @@
 import MenuItem from "./components/MenuItem"
 import { menuItems } from "./data/db"
+import useOrder from "./hookd/useOrder" // importamos el hook
 
 
 function App() {
   /* console.log(menuItems) */
 
+  // usamos el hook
+  const { addItem } = useOrder()
+
+
   return (
     <>
-      <div className="container mx-auto px-4 md:px-0">
+      <div className="max-h-screen flex flex-col container mx-auto px-4 md:px-0">
         <header className="border-b py-2">
           <h1 className="text-center text-2xl font-light">Tip Calculator</h1>
         </header>
@@ -22,6 +27,7 @@ function App() {
                 <MenuItem
                   key={item.id}
                   item={item}
+                  addItem={addItem}
                 />
               ))}
             </div>
