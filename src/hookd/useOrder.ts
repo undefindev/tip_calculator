@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { OrderItem } from "../types"
+import { MenuItem, OrderItem } from "../types"
 
 
 export default function useOrder() {
@@ -8,8 +8,10 @@ export default function useOrder() {
   const [order, setOrder] = useState<OrderItem[]>([])
 
   // y esta la funcion para agregar los articulos al resumen
-  const addItem = () => {
-    console.log('agregando..')
+  const addItem = (item: MenuItem) => {
+
+    const newItem = { ...item, quantity: 1 } // const newItem : OrederItem. tambien seria correcto
+    setOrder([...order, newItem])
   }
   return {
     addItem
