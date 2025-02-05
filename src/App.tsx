@@ -1,5 +1,6 @@
 import MenuItem from "./components/MenuItem"
 import OrderContents from "./components/OrderContents"
+import OrderTotals from "./components/OrderTotals"
 import { menuItems } from "./data/db"
 import useOrder from "./hookd/useOrder" // importamos el hook
 
@@ -34,7 +35,7 @@ function App() {
             </div>
           </div>
 
-          {/* right side */}
+          {/* right side top*/}
           <div className="pt-4">
             <h2 className="text-center text-lg font-medium">Consumo</h2>
             {/* sumary */}
@@ -43,6 +44,8 @@ function App() {
                 order={order}
                 removeItem={removeItem}
               />
+              {/* totals */}
+              <OrderTotals />
             </div>
           </div>
         </main>

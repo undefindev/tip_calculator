@@ -12,7 +12,7 @@ export default function useOrder() {
     if (itemExist) {
       const updateOrder = order.map(orderItem => orderItem.id === item.id ?
         { ...orderItem, quantity: orderItem.quantity + 1 } :
-        orderItem // esta es la funcion que agrega las cantidades, si existe me e agregas uno mas
+        orderItem // esta es la funcion que agrega las cantidades, si existe me e agregas uno mas si no lo dejas igual
       )
       setOrder(updateOrder)
     } else {

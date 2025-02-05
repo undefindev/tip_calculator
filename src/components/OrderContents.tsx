@@ -27,7 +27,7 @@ export default function OrderContents({ order, removeItem }: OrderContentsProps)
               <button
                 type="reset"
                 onClick={() => removeItem(item.id)}
-                className="bg-red-500 font-black text-white rounded-full h-8 w-8">
+                className="border border-red-500 font-black text-red-500 rounded-full h-8 w-8">
                 X
               </button>
             </div>
