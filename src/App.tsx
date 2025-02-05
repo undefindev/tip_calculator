@@ -8,7 +8,7 @@ function App() {
   /* console.log(menuItems) */
 
   // usamos el hook, porque todavia no estamos manejando un estado global
-  const { order, addItem } = useOrder()
+  const { order, addItem, removeItem } = useOrder()
 
 
   return (
@@ -39,8 +39,9 @@ function App() {
             <h2 className="text-center text-lg font-medium">Consumo</h2>
             {/* sumary */}
             <div className="space-y-4 mt-8 ml-4">
-              <OrderContents
-                order={order} // que nunca se no solvin las malditas props
+              <OrderContents // que nunca se no solvin las malditas props
+                order={order}
+                removeItem={removeItem}
               />
             </div>
           </div>

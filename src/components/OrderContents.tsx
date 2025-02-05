@@ -1,11 +1,12 @@
 import { formatCurrency } from "../helpers"
-import { OrderItem } from "../types"
+import { MenuItem, OrderItem } from "../types"
 
 
 type OrderContentsProps = {
-  order: OrderItem[]
+  order: OrderItem[],
+  removeItem: (id: MenuItem['id']) => void
 }
-export default function OrderContents({ order }: OrderContentsProps) {
+export default function OrderContents({ order, removeItem }: OrderContentsProps) {
   return (
     <div>
       <div>
@@ -23,7 +24,10 @@ export default function OrderContents({ order }: OrderContentsProps) {
                   {item.quantity} - {formatCurrency(item.price * item.quantity)}
                 </p>
               </div>
-              <button type="reset" className="bg-red-500 font-black text-white rounded-full h-8 w-8">
+              <button
+                type="reset"
+                onClick={() => removeItem(item.id)}
+                className="bg-red-500 font-black text-white rounded-full h-8 w-8">
                 X
               </button>
             </div>
