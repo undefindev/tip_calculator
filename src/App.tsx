@@ -14,37 +14,43 @@ function App() {
 
   return (
     <>
-      <div className="max-h-screen flex flex-col container mx-auto px-4 md:px-0">
-        <header className="border-b py-2">
-          <h1 className="text-center text-2xl font-light">Tip Calculator</h1>
+
+      <div>
+        <header className="flex items-center justify-between h-10 lg:h-14 border-b px-4">
+          <div>
+            <p>a la Huevona..!!</p>
+          </div>
+          <div>
+            <ul className="flex items-center gap-4">
+              <li>about</li>
+              <li>Menu</li>
+              <li>Summary</li>
+            </ul>
+          </div>
         </header>
-        {/* main content */}
-        <main className="py-4 divide-y md:divide-y-0 md:py-8 md:divide-x grid md:grid-cols-2">
-          {/* left side */}
-          <div className="pb-4">
-            <h2 className="text-center text-lg font-medium">Menu</h2>
-            {/* menu */}
-            <div className=" space-y-4 mt-8 mr-4">
-              {menuItems.map(item => (
-                <MenuItem
-                  key={item.id}
-                  item={item}
-                  addItem={addItem}
-                />
-              ))}
-            </div>
+
+        {/* wrapper */}
+        <main className="flex flex-row h-[calc(100vh-56px)]">
+          {/* menu */}
+          <div className="w-1/2 overflow-y-scroll box-border">
+            {menuItems.map(item => (
+              <MenuItem
+                key={item.id}
+                item={item}
+                addItem={addItem}
+              />
+            ))}
           </div>
 
-          {/* right side top*/}
-          <div className="pt-4">
-            <h2 className="text-center text-lg font-medium">Consumo</h2>
-            {/* sumary */}
-            <div className="space-y-4 mt-8 ml-4">
-              <OrderContents // que nunca se no solvin las malditas props
+          {/* oreder summary */}
+          <div className="w-1/2 flex flex-col">
+            <div className="flex-1 overflow-y-scroll box-border p-8">
+              <OrderContents
                 order={order}
                 removeItem={removeItem}
               />
-              {/* totals */}
+            </div>
+            <div>
               <OrderTotals
                 order={order}
               />
@@ -52,8 +58,43 @@ function App() {
           </div>
         </main>
       </div>
+
     </>
   )
 }
 
 export default App
+
+/* 
+  <div className="">
+              <h2 className="text-center">
+                Menu
+              </h2>
+            </div>
+            <div>
+              
+            </div>
+
+
+
+
+            <div>
+              <h2 className="text-center">
+                Order Summary
+              </h2>
+            </div>
+            <div>
+              <div>
+                1
+              </div>
+              {/* totals *
+              <div>
+                
+              </div>
+            </div>
+
+
+
+
+
+*/

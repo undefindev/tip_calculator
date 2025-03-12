@@ -12,9 +12,9 @@ export default function OrderTotals({ order }: OrderTotalsProps) {
   const subtotalAmount = useMemo(() => order.reduce((total, item) => total + (item.quantity * item.price), 0), [order])
   return (
     <>
-      <div>
-        <h2 className="text-center font-semibold mt-8">Total & Propina</h2>
-        <div className="flex flex-col items-end space-y-2 mt-4">
+      <div className="p-4">
+        <h2 className="text-center mb-2">Total & Propina</h2>
+        <div className="flex flex-col gap-2 items-end">
           <p>SubTotal: {''}
             <span>${formatCurrency(subtotalAmount)}</span>
           </p>

@@ -17,6 +17,7 @@ export default function MenuItem({ item, addItem }: MenuItemProps) {
         <p>${item.price}</p>
       </button>
     </>
+
   )
 }
 
